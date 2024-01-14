@@ -1,0 +1,20 @@
+[package]
+name = "rust_grpc_server"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]] # Bin to run the HelloWorld gRPC server
+name = "homeservice-server"
+path = "src/server.rs"
+
+[[bin]] # Bin to run the HelloWorld gRPC client
+name = "homeservice-client"
+path = "src/client.rs"
+
+[dependencies]
+tokio = { version = "1.35.1", features = ["full"] }
+tonic = "0.10.2"
+prost = "0.12"
+
+[build-dependencies]
+tonic-build = "0.10.2"
